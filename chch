@@ -1,0 +1,21 @@
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+b1 = b
+d1 = d
+while (b != 0) and (d != 0):
+    if d > b:
+        d = d % b
+    else:
+        b = b % d
+nod = d + b
+nok = b1 * d1 // nod
+sume = a * (nok // b1) - c * (nok // d1)
+i = sume
+while i != 0:
+    if (sume % i == 0) and (nok % i == 0):
+        sume = sume // i
+        nok = nok // i
+    i -= 1
+print(sume, '/', nok)
